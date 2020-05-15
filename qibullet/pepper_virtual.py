@@ -10,6 +10,7 @@ from qibullet.camera import *
 from qibullet.base_controller import *
 from qibullet.robot_posture import PepperPosture
 from qibullet.robot_virtual import RobotVirtual
+import pyttsx3
 
 
 class PepperVirtual(RobotVirtual):
@@ -471,3 +472,12 @@ class PepperVirtual(RobotVirtual):
                 finger_values.append((value * multiplier) + offset)
 
         return finger_names, finger_values
+
+    def speak(self, texte):
+        dialogue = pyttsx3.init()
+        vitesse = dialogue.getProperty('rate')
+        dialogue.setProperty('vitesse', 125)
+        voices = dialogue.getProperty('voices')
+        dialogue.setProperty('voices', voices[0].id)
+        dialogue.say(texte)
+        dialogue.runAndWait()

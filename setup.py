@@ -16,7 +16,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/ProtolabSBRE/qibullet",
     packages=setuptools.find_packages(),
-    install_requires=['numpy', 'pybullet'],
+    install_requires=['numpy', 'pybullet', 'pyttsx3'],
     package_data={"qibullet": [
         "robot_data/pepper_1.7/*.urdf",
         "robot_data/pepper_1.7/meshes/*.obj",
