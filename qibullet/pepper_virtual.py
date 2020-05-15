@@ -475,11 +475,9 @@ class PepperVirtual(RobotVirtual):
 
     def speak(self, texte):
         dialogue = pyttsx3.init()
-        vitesse = dialogue.getProperty('rate')
         #Change la vitesse de la voix
-        dialogue.setProperty('vitesse', 125)
-        voices = dialogue.getProperty('voices')
-        #Change le ton de la voix en une voix masculine
-        dialogue.setProperty('voices', voices[0].id)
+        dialogue.setProperty('rate', 100)
+        #Change la langue
+        dialogue.setProperty('voice', 'french')
         dialogue.say(texte)
         dialogue.runAndWait()

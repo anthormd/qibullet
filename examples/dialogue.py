@@ -10,7 +10,7 @@ def main():
     simulation_manager = SimulationManager()
     client = simulation_manager.launchSimulation(gui=True)
     pepper = simulation_manager.spawnPepper(client, spawn_ground_plane=True)
-    texte = "Hello I'm Pepper"
+    texte = "Salut les amis"
     pepper.speak(texte)
     
     
